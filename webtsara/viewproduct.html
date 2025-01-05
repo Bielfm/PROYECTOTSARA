@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <header class="navbar">
+    <link rel="stylesheet" href="styles.css">
+    <div class="logo">Tsara</div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admin.html" class="neon-link">Admin Options</a>
+    </nav>
+  </header>
+<body>
+    <h1>View and Modify Products</h1>
+
+    <!-- Formulario para buscar productos (opcional) -->
+    <h2>Search Products</h2>
+    <form method="POST" action="php/view_products.php" id="view-product-form">
+        <label for="search">Search by Name or Description:</label>
+        <input type="text" name="search" id="search" placeholder="Product name"> <br>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

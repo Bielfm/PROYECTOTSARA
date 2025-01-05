@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register New Product - Tsara</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Tsara</div>
+    <nav class="nav-links">
+        <a href="admin.html" class="neon-link">Admin Options</a>
+        <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="form-section">
+    <h2>Register New Product</h2>
+    <form method="POST" action="php/register_product.php" id="register-product-form">
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" name="name" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="price">Price (€):</label>
+      <input type="number" id="price" name="price" step="0.01" required>
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required>
+
+      <label for="is-featured">Is Featured:</label>
+      <input type="checkbox" id="is-featured" name="is_featured">
+
+      <button type="submit" class="neon-button">Register Product</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Tsara. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -9,11 +9,8 @@
   -Aplicación móvil (XML,JAVA,PHP)
   
   Están conectadas a una base de datos en phpMyAdmin, con lo que podremos crear usuarios, añadir productos...etc
-  En el esktop tenemos
-  -Register
-  ![image](https://github.com/user-attachments/assets/694d3b0c-ce90-4ba7-889c-77bba9708d4c)
-  -Inicio Sesion
-  ![image](https://github.com/user-attachments/assets/2bd52730-13cb-4d76-8e5c-4097eaf0b7da)
+  
+  
 
 
 

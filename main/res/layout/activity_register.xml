@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp" />
+
+    <EditText
+        android:id="@+id/et_register_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/et_register_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/et_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:backgroundTint="#8A2BE2"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

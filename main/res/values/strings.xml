@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tsara</string>
+    <string-array name="sizes">
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+    </string-array>
+</resources>

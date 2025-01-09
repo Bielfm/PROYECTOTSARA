@@ -1,0 +1,13 @@
+<resources>
+    <!-- IDs para LoginActivity -->
+    <item name="editTextUsername" type="id" />
+    <item name="editTextPassword" type="id" />
+    <item name="buttonLogin" type="id" />
+    <item name="buttonRegister" type="id" />
+
+    <!-- IDs para RegisterActivity -->
+    <item name="editTextEmail" type="id" />
+
+    <!-- IDs para MainActivity -->
+    <item name="recyclerView" type="id" />
+</resources>

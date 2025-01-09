@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver y Modificar Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Tsara</div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="admin.html" class="neon-link">Admin</a>
+        </nav>
+    </header>
+
+    <h1>Ver y Modificar Productos</h1>
+
+    <h2>Buscar productos</h2>
+    <form method="POST" action="php/view_products.php">
+        <label for="search">Buscar:</label>
+        <input type="text" name="search" id="search" placeholder="Nombre del producto">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div>
+        <?php include("view_products.php"); ?>
+    </div>
+</body>
+</html>

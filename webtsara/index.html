@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tsara - La mejor tienda de moda online para ropa elegante y única.">
+    <title>Tsara</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Tsara</div>
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="neon-link">Registro</a>
+            <a href="#about-us">Sobre Nosotros</a>
+            <a href="#contact" class="neon-link">Contacto</a>
+            <a href="admin.html" class="neon-link">Admin</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>¡Bienvenido a Tsara!</h1>
+            <p>El futuro del streetwear</p>
+            <a href="#productos" class="neon-button">Ver Productos</a>
+        </div>
+    </section>
+
+    <section id="productos" class="featured-products">
+        <h2>Productos Destacados</h2>
+        <div id="product-gallery" class="product-gallery">
+        </div>
+    </section>
+
+    <section id="about-us" class="about-us">
+        <h2>Sobre Nosotros</h2>
+        <p>En Tsara, creemos que la moda es una expresión de individualidad. Nuestra misión es ofrecerte ropa única y de alta calidad que se adapte a tu estilo y personalidad.</p>
+        <p>Fundada en 2024 por un estudiante de Monlau en Santa Coloma de Gramenet, Tsara se compromete a brindar la mejor experiencia de compra en línea con enfoque en la innovación y la satisfacción del cliente.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contáctanos</h2>
+        <p>Síguenos en nuestras redes sociales o envíanos un mensaje:</p>
+        <div class="social-links">
+            <a href="#" class="neon-link">Instagram</a>
+            <a href="#" class="neon-link">Facebook</a>
+            <a href="#" class="neon-link">X</a>
+        </div>
+        <form class="contact-form" onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Tu Nombre" required>
+            <input type="email" id="email" placeholder="Tu Correo" required>
+            <textarea id="message" placeholder="Tu Mensaje" rows="5" required></textarea>
+            <button type="submit" class="neon-button">Enviar Mensaje</button>
+        </form>
+    </section>
+    
+    <script>
+    function sendEmail(event) {
+        event.preventDefault(); 
+    
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+    
+        if (!name || !email || !message) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+    
+        const subject = encodeURIComponent(`Mensaje de ${name}`);
+        const body = encodeURIComponent(`Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`);
+        const mailtoLink = `mailto:atencionalcliente@tsara.com?subject=${subject}&body=${body}`;
+    
+        window.location.href = mailtoLink;
+    }
+
+    async function loadProducts() {
+        try {
+            const response = await fetch('http://localhost/webtsara/php/get_products.php');
+            const products = await response.json();
+
+            const gallery = document.getElementById('product-gallery');
+
+            if (products.message) {
+                gallery.innerHTML = `<p>${products.message}</p>`;
+            } else {
+                gallery.innerHTML = products.map(product => `
+                    <div class="product-card">
+                        <img src="${product.image_url}" alt="${product.name}" class="product-image">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <p class="product-price">€${product.price}</p>
+                        <p class="product-stock">Stock: ${product.stock}</p>
+                    </div>
+                `).join('');
+            }
+        } catch (error) {
+            console.error('Error al cargar los productos:', error);
+            document.getElementById('product-gallery').innerHTML = '<p>Error al cargar los productos. Intenta más tarde.</p>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2025 Tsara. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

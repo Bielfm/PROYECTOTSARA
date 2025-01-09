@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register New Product - Tsara</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Tsara</div>
+    <nav class="nav-links">
+        <a href="admin.html" class="neon-link">Admin</a>
+        <a href="index.html">Inicio</a>
+    </nav>
+  </header>
+
+  <main class="form-section">
+    <h2>Registrar un nuevo producto</h2>
+    <form method="POST" action="php/register_product.php" enctype="multipart/form-data" id="register-product-form">
+      <label for="product-name">Nombre:</label>
+      <input type="text" id="product-name" name="name" required>
+    
+      <label for="description">Descripcion:</label>
+      <textarea id="description" name="description" required></textarea>
+    
+      <label for="price">Precio (€):</label>
+      <input type="number" id="price" name="price" step="0.01" required>
+    
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required>
+    
+      <label for="is-featured">Destacado:</label>
+      <input type="checkbox" id="is-featured" name="is_featured">
+    
+      <label for="product-image">Imagen del Producto:</label>
+      <input type="file" id="product-image" name="image" accept="image/*" required>
+    
+      <button type="submit" class="neon-button">Registrar producto</button>
+    </form>
+    
+  </main>
+
+</body>
+</html>

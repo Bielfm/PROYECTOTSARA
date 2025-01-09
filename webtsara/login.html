@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Tsara</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Tsara</div>
+    <nav class="nav-links">
+      <a href="index.html">INICIO</a>
+      <a href="register.html">REGISTRARSE</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Iniciar sesión en tu cuenta</h2>
+    <form action="php/login.php" method="POST">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Introduce tu email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
+          <button type="button" class="toggle-password" aria-label="Show/Hide password" onclick="togglePassword()">👁️</button>
+        </div>
+      </div>
+
+      <button type="submit" class="neon-button">Login</button>
+    </form>
+
+    <div class="forgot-password">
+      <a href="reset-password.html">Has olvidado tu contraseña?</a>
+    </div>
+  </section>
+
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      const type = passwordField.type === 'password' ? 'text' : 'password';
+      passwordField.type = type;
+    }
+  </script>
+</body>
+</html>
